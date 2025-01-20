@@ -21,5 +21,4 @@ In **Monkey Mart**, your goal is to **build up your supermarket** and **max it o
 Good luck, and may your supermarket succeed! 🏆
 
 ### Links:
-- [Official Website](http://www.monkeymartgame.com)
-- [Discord](http://discord.gg/monkeymart)
+- [Official Website](https://monkey-mart-official-v4.netlify.app)
