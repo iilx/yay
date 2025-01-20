@@ -2,12 +2,18 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh;https://www.bing.com/search?q=bandit+bluey+ausmalbild&qs=n&form=QBRE&sp=-1&lq=0&pq=bandit+bluey+ausmalbild&sc=9-23&sk=&cvid=526FB7BEF32840E1B8D340BFDF12466A&ghsh=0&ghacc=0&ghpl=&adlt=strict
   background: linear-gradient(135deg, #ff8a8a, #fdd1d1);
-  font-family: Arial, sans-serif;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  color: #fff;
 }
 
 /* macOS Window */
@@ -17,6 +23,13 @@ body {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mac-window.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
 }
 
 /* macOS Header */
@@ -54,29 +67,60 @@ body {
   text-align: center;
 }
 
-.logo {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-}
-
 h1 {
   font-size: 1.5rem;
   margin: 10px 0 20px;
+  color: inherit;
 }
 
-input, textarea {
+p {
+  margin-bottom: 15px;
+  color: inherit;
+}
+
+label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+input, select {
   width: 90%;
+  padding: 10px;
+  margin: 10px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input.dark-mode, select.dark-mode {
+  background: #333;
+  color: #f4f4f4;
+  border-color: #555;
+}
+
+textarea {
+  width: 90%;
+  height: 80px;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  resize: none;
+  background: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-textarea {
-  height: 80px;
-  resize: none;
+textarea.dark-mode {
+  background: #333;
+  color: #f4f4f4;
+  border-color: #555;
 }
 
 button {
@@ -87,8 +131,39 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background: #e05151;
+}
+
+button.dark-mode {
+  background: #444;
+  color: #fff;
+}
+
+button.dark-mode:hover {
+  background: #555;
+}
+
+/* Second Window Animation */
+#burnBotWindow2 {
+  animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Dark Mode Button */
+#toggleDarkMode {
+  margin-top: 20px;
 }
