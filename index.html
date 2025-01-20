@@ -7,12 +7,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Roast Bot</h1>
-    <p>Ask me anything, and I'll roast you!</p>
-    <textarea id="userInput" placeholder="Type your question here..."></textarea>
-    <button id="roastButton">Get Roasted</button>
-    <div id="response"></div>
+  <div class="mac-window">
+    <div class="window-header">
+      <span class="close"></span>
+      <span class="minimize"></span>
+      <span class="maximize"></span>
+    </div>
+    <div class="window-body">
+      <img src="https://macos-asset-url.com/logo.png" alt="Roast Bot Logo" class="logo">
+      <h1>Roast Bot</h1>
+      <input type="text" id="name" placeholder="Enter your name">
+      <input type="text" id="hobby" placeholder="Enter your favorite hobby">
+      <textarea id="roastOutput" readonly></textarea>
+      <button onclick="generateRoast()">Get Roasted</button>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
