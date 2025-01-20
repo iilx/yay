@@ -3,25 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roast Bot</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Burn Bot</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="mac-window">
+  <div class="mac-window" id="burnBotWindow1">
     <div class="window-header">
       <span class="close"></span>
       <span class="minimize"></span>
       <span class="maximize"></span>
     </div>
     <div class="window-body">
-      <img src="https://macos-asset-url.com/logo.png" alt="Roast Bot Logo" class="logo">
-      <h1>Roast Bot</h1>
+      <h1>Burn Bot</h1>
+      <p>Fill in or select details to get roasted:</p>
+      <label for="name">Name:</label>
       <input type="text" id="name" placeholder="Enter your name">
-      <input type="text" id="hobby" placeholder="Enter your favorite hobby">
-      <textarea id="roastOutput" readonly></textarea>
-      <button onclick="generateRoast()">Get Roasted</button>
+
+      <label for="hobby">Hobby:</label>
+      <select id="hobby">
+        <option value="Reading">Reading</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Knitting">Knitting</option>
+        <option value="Cooking">Cooking</option>
+        <option value="Fishing">Fishing</option>
+        <option value="Running">Running</option>
+        <option value="Gardening">Gardening</option>
+        <option value="Photography">Photography</option>
+        <option value="Painting">Painting</option>
+        <option value="Collecting Stamps">Collecting Stamps</option>
+        <option value="Playing Chess">Playing Chess</option>
+        <option value="Watching Movies">Watching Movies</option>
+        <option value="Hiking">Hiking</option>
+        <option value="Dancing">Dancing</option>
+        <option value="Cycling">Cycling</option>
+        <option value="Singing">Singing</option>
+        <option value="Drawing">Drawing</option>
+        <option value="Traveling">Traveling</option>
+        <option value="Swimming">Swimming</option>
+        <option value="Other">Other (type below)</option>
+      </select>
+      <input type="text" id="customHobby" placeholder="Type your hobby" style="display:none;">
+
+      <label for="trait">Trait:</label>
+      <select id="trait">
+        <option value="Ambitious">Ambitious</option>
+        <option value="Funny">Funny</option>
+        <option value="Shy">Shy</option>
+        <option value="Arrogant">Arrogant</option>
+        <option value="Kind">Kind</option>
+        <option value="Lazy">Lazy</option>
+        <option value="Talkative">Talkative</option>
+        <option value="Quiet">Quiet</option>
+        <option value="Stubborn">Stubborn</option>
+        <option value="Creative">Creative</option>
+        <option value="Optimistic">Optimistic</option>
+        <option value="Sarcastic">Sarcastic</option>
+        <option value="Pessimistic">Pessimistic</option>
+        <option value="Caring">Caring</option>
+        <option value="Insecure">Insecure</option>
+        <option value="Confident">Confident</option>
+        <option value="Adventurous">Adventurous</option>
+        <option value="Organized">Organized</option>
+        <option value="Messy">Messy</option>
+        <option value="Other">Other (type below)</option>
+      </select>
+      <input type="text" id="customTrait" placeholder="Type your trait" style="display:none;">
+
+      <label for="lifeGoal">Life Goal:</label>
+      <select id="lifeGoal">
+        <option value="Becoming Rich">Becoming Rich</option>
+        <option value="Fame">Fame</option>
+        <option value="Starting a Family">Starting a Family</option>
+        <option value="Traveling the World">Traveling the World</option>
+        <option value="Helping Others">Helping Others</option>
+        <option value="Becoming Fit">Becoming Fit</option>
+        <option value="Learning a Skill">Learning a Skill</option>
+        <option value="Being Happy">Being Happy</option>
+        <option value="Getting Educated">Getting Educated</option>
+        <option value="Owning a Business">Owning a Business</option>
+        <option value="Becoming a Leader">Becoming a Leader</option>
+        <option value="Mastering an Art">Mastering an Art</option>
+        <option value="Retiring Early">Retiring Early</option>
+        <option value="Writing a Book">Writing a Book</option>
+        <option value="Saving the Environment">Saving the Environment</option>
+        <option value="Inspiring Others">Inspiring Others</option>
+        <option value="Owning a Home">Owning a Home</option>
+        <option value="Finding Love">Finding Love</option>
+        <option value="Other">Other (type below)</option>
+      </select>
+      <input type="text" id="customLifeGoal" placeholder="Type your life goal" style="display:none;">
+
+      <button id="roastBtn">Roast Me</button>
+      <button id="toggleDarkMode">Toggle Dark Mode</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
