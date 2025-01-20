@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Elements for the Roast Bot and Custom Input
-  const roastButton = document.getElementById("roastButton");
-  const customInputField = document.getElementById("customInput");
+  const roastButton = document.getElementById("roastBtn");  // Fixed ID here
+  const customInputField = document.getElementById("customHobby");  // Fixed custom input field
   const roastWindow1 = document.getElementById("burnBotWindow1");
   const roastWindow2 = document.getElementById("burnBotWindow2");
   const roastContent = document.getElementById("roastContent");
@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Populate the select options with hobby, trait, and life goal
   function populateSelectOptions() {
-    const hobbySelect = document.getElementById("hobbySelect");
-    const traitSelect = document.getElementById("traitSelect");
-    const lifeGoalSelect = document.getElementById("lifeGoalSelect");
+    const hobbySelect = document.getElementById("hobby");
+    const traitSelect = document.getElementById("trait");
+    const lifeGoalSelect = document.getElementById("lifeGoal");
 
     hobbies.forEach(hobby => {
       const option = document.createElement("option");
@@ -84,13 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle Roast Generation
   roastButton.addEventListener("click", () => {
-    const selectedHobby = document.getElementById("hobbySelect").value;
-    const selectedTrait = document.getElementById("traitSelect").value;
-    const selectedLifeGoal = document.getElementById("lifeGoalSelect").value;
+    const selectedHobby = document.getElementById("hobby").value;
+    const selectedTrait = document.getElementById("trait").value;
+    const selectedLifeGoal = document.getElementById("lifeGoal").value;
     const customInput = customInputField.value.trim();
 
-    if (selectedHobby === "Select a hobby" && selectedTrait === "Select a trait" && selectedLifeGoal === "Select a life goal" && customInput === "") {
-      alert("Please select at least one option or enter a custom input.");
+    if (selectedHobby === "Other" && !customInput) {
+      alert("Please enter a custom hobby.");
+      return;
+    }
+
+    if (selectedTrait === "Other" && !customInput) {
+      alert("Please enter a custom trait.");
+      return;
+    }
+
+    if (selectedLifeGoal === "Other" && !customInput) {
+      alert("Please enter a custom life goal.");
       return;
     }
 
@@ -103,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // If the custom option is selected, use it for roasting
       if (customInput) {
-        roastContent2.textContent = generateRoast(customInput, "", "");
+        roastContent2.textContent = generateRoast(customInput, customInput, customInput);
       } else {
         roastContent2.textContent = generateRoast(selectedHobby, selectedTrait, selectedLifeGoal);
       }
